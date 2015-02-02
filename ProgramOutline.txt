@@ -1,0 +1,62 @@
+CS205 Warmup Project Program outline
+
+*** ToDo:
+      - decide on format for message passing (moves are strings or tuples, etc.)
+      - decide on what stats we want to add and how 
+        - will the stats module only accept stats at the end, or can it
+          have the concept of a current game so stats can be added on the fly 
+          (move list, for example)
+      - write some code!
+      .
+      .
+      .
+
+How it works:
+  Entry point is GamePlayer. It will hold instances of GameBoard, GameInterface and 
+  GameStats. It will welcome the user, ask them what game they want to play. It will
+  then facilitate the game using the Interface and GameBoard objects. At the conclusion
+  of the game it will pass stats on to the GameStats object and ask the user if they
+  want to start over... 
+
+
+GamePlayer (Jon):
+	- manages the game play session
+	- connects interface, gameboard and stats modules
+	- gameplay loop to allow user to play multiple times
+	
+GameInterface (Jon): 
+	- handles interaction with the user
+	
+	- public methods:
+		showWelcome(): displays a welcome message to the console
+		showPlayMenu(): displays the menu with gameplay choices
+		showBoardMenu(): displays the menu to choose which type of game to play
+		showHelp(boardType): shows how to play game on current board
+		showBoard(boardType, board): displays current state of the board
+		getMove(): gets user input for a move
+		
+GameBoard (Joseph):
+	- keeps track of the current state of the gameboard
+		should probably keep track of english and triangle games
+		played seperately with ability to combine stats for an
+		overall session
+	
+	- should be a superclass of TriangleBoard and EnglishBoard
+	
+	- public methods:
+		boardType(): reports which instance of a board this is
+		isDone(): checks to see if there are any legal moves
+		move(src, dest): tries to move a peg from src to dest position
+		numPegs(): reports the number of pegs remaining on the board
+		toString(): returns an ASCII representation of the game board
+		winner(): checks to see if the board is in a winning state 
+							(return numPegs() == 1)
+
+GameStats(Zach):
+	- Keeps track of statistics for the game session
+	- public methods:
+		addGameData(numPegsLeft, locations?): passes on the data from the
+				current (most recently finished?) game so it can be stored
+		various getters...: to get stats out, i.e. averages, ASCII graphs, etc.
+	
+	
