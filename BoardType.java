@@ -3,7 +3,7 @@
  	Jonathan Carter
  	Zachary Chay-Dolan
  	Joseph Corbett
- 	Aaron Brunette
+ 	Aaron Brunet
 	
 	enum to keep track of game board type
  **************************************/
