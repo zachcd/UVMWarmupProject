@@ -12,14 +12,23 @@ public class GameStats {
 	 ArrayList<Integer> TriangleTimes = new ArrayList<Integer>();
 	 ArrayList<Integer> English = new ArrayList<Integer>();
 	 ArrayList<Integer> EnglishTimes = new ArrayList<Integer>();
-	 
-	 
-	 public GameStats() {
-		 
+
+	 public static void main(String[] args) {
+        GameStats stats = new GameStats();
+        stats.addGameData(2, 50, BoardType.ENGLISH);
+        stats.addGameData(4, 70, BoardType.ENGLISH);
+        stats.addGameData(5, 90, BoardType.ENGLISH);
+        System.out.println(stats.getEnglishAveragePegs());
+        System.out.println(stats.getEnglishChart());
+        System.out.println(stats.getEnglishGraph());
+
 	 }
-	 
+	 public GameStats() {
+
+	 }
+
 	 public void addGameData(int pegsleft,int time, BoardType BType) {
-		 if (BType == ENGLISH) {
+		 if (BType == BoardType.ENGLISH) {
 			 EnglishPegTotal = EnglishPegTotal + pegsleft;
 			 EnglishGameTotal = EnglishGameTotal + 1;
 			 EnglishTimeTotal = EnglishTimeTotal + time;
@@ -32,43 +41,43 @@ public class GameStats {
 			 Triangle.add(Integer.valueOf(pegsleft));
 			 TriangleTimes.add(Integer.valueOf(time));
 		 }
-			
-		 
+
+
 	 }
 	 public int getEnglishAveragePegs(){
-		 return EnglishPegTotal / EnglishGameTotal
+		 return EnglishPegTotal / EnglishGameTotal;
 	 }
 	 public int getTriangleAveragePegs(){
-		 return TrianglePegTotal / TriangleGameTotal
+		 return TrianglePegTotal / TriangleGameTotal;
 	 }
 	 public int getEnglishAverageTime() {
-		 return EnglishTimeTotal / EnglishGameTotal
+		 return EnglishTimeTotal / EnglishGameTotal;
 	 }
 	 public int getTriangleAverageTime() {
-		 return TriangleTimeTotal/ TriangleGameTotal
+		 return TriangleTimeTotal/ TriangleGameTotal;
 	 }
 	 public String getTriangleChart() {
 		 String ret;
 		 ret = "_____________\n";
-		 ret.concat("Pegs | Time\n");
+		 ret+="Pegs| Time\n";
 		 for (int i = 0; i < Triangle.size(); i++){
-			 ret.concat(Triangle.get(i) + "  |  " + TriangleTimes.get(i));
+			 ret+=Triangle.get(i) + "  |  " + TriangleTimes.get(i) + "\n";
 		 }
 		 return ret;
-				 
+
 	 }
 	 public String getEnglishChart() {
 		 String ret;
 		 ret = "_____________\n";
-		 ret.concat("Pegs | Time\n");
+		 ret+="Pegs | Time\n";
 		 for (int i = 0; i < English.size(); i++){
-			 ret.concat(English.get(i) + "  |  " + EnglishTimes.get(i));
+			 ret+=English.get(i) + "  |  " + EnglishTimes.get(i) + "\n";
 		 }
 		 return ret;
 	 }
-	 
+
 	 public String getEnglishGraph() {
-		 int LargestPeg = 0
+		 int LargestPeg = 0;
 		 for (int i = 0; i < English.size(); i++){
 			 if (English.get(i) > LargestPeg) {
 				 LargestPeg = English.get(i);
@@ -76,21 +85,26 @@ public class GameStats {
 		 }
 		 String ret = "_______________________________________________________________\n";
 		 for (int i = LargestPeg; i >= 0; i--) {
-			 ret.concat(i + " |");
+			 ret+=i + " |";
 			 for (int j = 0; j < English.size(); j++){
 				 if (English.get(j) == i) {
-					 ret.concat("*");
+					 ret+="*";
 				 } else {
-					 ret.concat(" ");
+					 ret+=" ";
 				 }
-			 } 
-			 ret.concat("\n");
-			 
+			 }
+			 ret+="\n";
+
 		 }
-		 
+		 ret+="_______________________________________________________________\n";
+		 ret+="   ";
+		 for (int k = 1; k <= English.size(); k++){
+			 ret+=k;
+		 }
+		 return ret;
 	 }
 	 public String getTriangleGraph() {
-		 int LargestPeg = 0
+		 int LargestPeg = 0;
 		 for (int i = 0; i < Triangle.size(); i++){
 			 if (Triangle.get(i) > LargestPeg) {
 				 LargestPeg = Triangle.get(i);
@@ -98,17 +112,22 @@ public class GameStats {
 		 }
 		 String ret = "_______________________________________________________________\n";
 		 for (int i = LargestPeg; i >= 0; i--) {
-			 ret.concat(i + " |");
+			 ret+=i + " |";
 			 for (int j = 0; j < Triangle.size(); j++){
 				 if (Triangle.get(j) == i) {
-					 ret.concat("*");
+					 ret+="*";
 				 } else {
-					 ret.concat(" ");
+					 ret+=" ";
 				 }
-			 } 
-			 ret.concat("\n");
-			 
+			 }
+			 ret+="\n";
+
 		 }
-		 
+		 ret+="_______________________________________________________________\n ";
+		 ret+="   ";
+		 for (int k = 1; k <= Triangle.size(); k++){
+			 ret+=k;
+		 }
+		 return ret;
 	 }
 }
