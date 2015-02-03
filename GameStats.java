@@ -21,7 +21,15 @@ public class GameStats {
         System.out.println(stats.getEnglishAveragePegs());
         System.out.println(stats.getEnglishChart());
         System.out.println(stats.getEnglishGraph());
-
+        stats.addGameData(7, 100, BoardType.TRIANGLE);
+        stats.addGameData(6, 90, BoardType.TRIANGLE);
+        stats.addGameData(5, 80, BoardType.TRIANGLE);
+        stats.addGameData(4, 60, BoardType.TRIANGLE);
+        stats.addGameData(3, 50, BoardType.TRIANGLE);
+        stats.addGameData(2, 50, BoardType.TRIANGLE);
+        System.out.println(stats.getTriangleAveragePegs());
+        System.out.println(stats.getTriangleChart());
+        System.out.println(stats.getTriangleGraph());
 	 }
 	 public GameStats() {
 
@@ -61,7 +69,7 @@ public class GameStats {
 		 ret = "_____________\n";
 		 ret+="Pegs| Time\n";
 		 for (int i = 0; i < Triangle.size(); i++){
-			 ret+=Triangle.get(i) + "  |  " + TriangleTimes.get(i) + "\n";
+			 ret+=Triangle.get(i) + "   |  " + TriangleTimes.get(i) + "\n";
 		 }
 		 return ret;
 
@@ -71,7 +79,7 @@ public class GameStats {
 		 ret = "_____________\n";
 		 ret+="Pegs | Time\n";
 		 for (int i = 0; i < English.size(); i++){
-			 ret+=English.get(i) + "  |  " + EnglishTimes.get(i) + "\n";
+			 ret+=English.get(i) + "   |  " + EnglishTimes.get(i) + "\n";
 		 }
 		 return ret;
 	 }
