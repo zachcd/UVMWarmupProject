@@ -135,6 +135,8 @@ public class GamePlayer {
 		
 		if(board.winner())
 			iface.congrats();
+		else
+			iface.lost(board.numPegs());
 				
 		
 	}

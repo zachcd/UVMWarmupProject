@@ -286,6 +286,13 @@ public class GameInterface
 		enterToCont();
 	}
 	
+	public void lost(int numPegs)
+	{
+		System.out.println("\n\nGAME OVER\nYou left " + numPegs + " on the board.");
+		
+		enterToCont();
+	}
+		
 	
 	/***
 	 enterToCont - waits for entry from the user in order to pause 
