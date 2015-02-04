@@ -93,7 +93,7 @@ public class GamePlayer {
 			}
 			else if(move == "q")
 			{
-				quit == TRUE;
+				quit = TRUE;
 			}		
 		}
 		
