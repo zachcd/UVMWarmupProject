@@ -48,13 +48,13 @@ public class GameBoard{
 		 
 
 		for (int i = 0; i < 5; i++) {
-		    for (int j = 0; j < 5; j++) {
+		    for (int j = 0; j <= i ; j++) {
 		        board[i][j] = Hole.FILLED;
 		    
-   		    for (int k = j; k < 5; k++) {
-   		        board[i][k] = Hole.NONE;
+//   		    for (int k = j; k < 5; k++) {
+//   		        board[k][i] = Hole.NONE;
    		    }//end nested for
-          }//end parent for
+          //}//end parent for
 		}
 		       
 		board[2][1] = Hole.EMPTY;
@@ -91,9 +91,9 @@ public class GameBoard{
 //	   		return false;
 //   	}
    	if(isValid(startx, starty, destx, desty)) {
-     		 board[startx][starty] = Hole.EMPTY;
-     		 board[destx][desty] = Hole.FILLED;
-     		 board[(startx + destx) / 2][(starty + desty) /2] = Hole.EMPTY; //removes peg from board  
+     		 board[starty][startx] = Hole.EMPTY;
+     		 board[desty][destx] = Hole.FILLED;
+     		 board[(starty + desty) / 2][(startx + destx) /2] = Hole.EMPTY; //removes peg from board  
      		 return true;
       }   else {
           return false;
@@ -118,9 +118,9 @@ public class GameBoard{
         else if(startx > 4 || starty > 4 || destx > 4 || desty > 4)
         	return false;
         	  
-        if(board[startx][starty] == Hole.FILLED &&
-         	 board[destx][desty] == Hole.EMPTY &&
-         	 board[(startx + destx) / 2][(starty + desty) /2] == Hole.FILLED){
+        if(board[starty][startx] == Hole.FILLED &&
+         	 board[desty][destx] == Hole.EMPTY &&
+         	 board[(starty + desty) / 2][(startx + destx) /2] == Hole.FILLED){
       	  	 return true;
         }   
          else{
@@ -200,16 +200,19 @@ public String toString() {
 
 String ret = "";
 if (type == BoardType.TRIANGLE) {
-	for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-        if (board[i][j] == Hole.FILLED) {
-		  ret+= "+";}
-		  if (board[i][j] == Hole.EMPTY) {
-		  ret+= "O";}
-		  else {
-		  ret+= "X";}
+	for (int j = 0; j < 5; j++) { // each row
+    for(int k = j; k < 4; k++)
+    	ret+=" ";		
+    for(int i = 0; i <= j; i++) {
+      if (board[j][i] == Hole.FILLED) {
+		  	ret+= "* ";}
+		  else if (board[j][i] == Hole.EMPTY) {
+		  	ret+= "o ";}
+		  
     }
-   
+   	
+   	ret  += "\n";
+    
     }
 	 }
 	 
@@ -218,9 +221,9 @@ if (type == BoardType.TRIANGLE) {
 	
 		for (int i = 0; i < 7; i++) {
 	    for (int j = 0; j < 7; j++) {
-	        if (board[j][i] == Hole.FILLED) 
+	        if (board[i][j] == Hole.FILLED) 
 			  		ret+= "* ";
-			  	else if (board[j][i] == Hole.EMPTY )
+			  	else if (board[i][j] == Hole.EMPTY )
 			  		ret+= "o ";
 			 		else 
 			 			ret+= "  ";

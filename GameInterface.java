@@ -48,6 +48,7 @@ public class GameInterface
 		message += ")\n";
 		message += "View (S)tats\n";
 		message += "(H)elp\n";
+		message += "(Q)uit\n";
 		message += "Enter choice: ";
 		
 		System.out.print(message);
@@ -87,7 +88,7 @@ public class GameInterface
 		message += "  * * * *      * * * * * * *\n";
 		message += " * * * * *         * * *    \n";
 		message += "                   * * *    \n";
-		message += "\n  Triangle         English\n\n";
+		message += "\n  Triangle        English\n\n";
 		
 		System.out.println(message);
 	}
@@ -157,11 +158,11 @@ public class GameInterface
 		
 		System.out.println("Please enter your move:");
 
-		String from = getValidPosition("From (ex: e3; x to cancel): ", maxChar, maxNum);
+		String from = getValidPosition("From (ex: e3; q to quit game): ", maxChar, maxNum);
 		
-		if(from.charAt(0) != 'x')
+		if(from.charAt(0) != 'q')
 		{
-			to = getValidPosition("To (ex: e3; x to cancel): ", maxChar, maxNum);
+			to = getValidPosition("To (ex: e3; x to cancel this move): ", maxChar, maxNum);
 			
 			if(to.charAt(0) != 'x')
 				return from + to;
@@ -169,7 +170,14 @@ public class GameInterface
 				return "x";
 		}
 		else
-			return "x";
+		{
+			System.out.print("Are you sure you wish to quit? (Y/N)");
+			switch(getChar("YN"))
+			{
+				case 'Y': return 'q'; break;
+				case 'N': return 'x'; break;
+			}
+				
 	}   
 	
 	/***
