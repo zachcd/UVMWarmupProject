@@ -98,7 +98,7 @@ public class GamePlayer {
 			}		
 		}
 		
-		int endTime = System.currentTimeMillis()/1000;
+		long endTime = System.currentTimeMillis()/1000;
 		
 		stats.addGameData(board.numPegs(), endTime - startTime, board.boardType());
 		

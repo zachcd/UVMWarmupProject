@@ -96,7 +96,9 @@ public class GameBoard{
           return false;
       }
    }//end move     
-              
+   public BoardType boardType() {
+	   return type;
+   }
    private boolean isValid(int startx, int starty, int destx,int desty) {
        if((this.type) == BoardType.ENGLISH) {
           if(startx != destx && starty != desty){
@@ -151,4 +153,32 @@ public class GameBoard{
    		    return false;
          }//end else
       }//end isDone
+   public int numPegs() {
+	   int k = 0;
+	   if (type== BoardType.ENGLISH) {
+		   for(int i = 0; i < 7; i++) {
+			   for (int j = 0; j < 7; j++) {
+				   if (board[i][j] == Hole.FILLED) {
+					   k = k+ 1;
+				   }
+			   }
+		   }
+	   } else {
+			   for(int i = 0; i < 5; i++) {
+				   for (int j = 0; j < 5; j++) {
+					   if (board[i][j] == Hole.FILLED) {
+						   k = k+ 1;
+					   }
+				   }
+			   }
+		   }
+	   return k;
+   }
+   public boolean winner() {
+	   if (numPegs() == 1) { 
+		   return true;
+	   } else {
+		   return false;
+	   }
+   }
 }//end class
