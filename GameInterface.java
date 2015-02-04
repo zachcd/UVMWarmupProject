@@ -132,6 +132,14 @@ public class GameInterface
 	
 	public void showBoard(BoardType bt, String board)
 	{
+		if(bt == BoardType.ENGLISH)
+		{
+			System.out.println("\t   1 2 3 4 5 6 7\n");
+		}
+		
+		String[] boardLines = board.split("\n");
+		for(int i = 0; i < boardLines.length; i++)
+			System.out.println("\t" + (char)('a' + i)+ "   " + boardLines[i]);
 		
 	}
 	
@@ -289,9 +297,28 @@ public class GameInterface
 			System.out.print(Character.getNumericValue(move.charAt(1)));
 			System.out.print(" " + (move.charAt(0) - 'a' + 1));
 			System.out.print(" " + Character.getNumericValue(move.charAt(3)));
-			System.out.print(" " + (move.charAt(2) - 'a' + 1));
+			System.out.print(" " + (move.charAt(2) - 'a' + 1) + "\n\n");
 		}
-			
+		
+		String board = "";
+		board += "    *    \n";
+		board += "   * *   \n";
+		board += "  * o *  \n";
+		board += " * * * * \n";
+		board += "* * * * *\n";
+
+		iface.showBoard(BoardType.TRIANGLE, board);
+		
+		board = "";
+		board += "    * * *    \n";
+		board += "    * * *    \n";
+		board += "* * * * * * *\n";
+		board += "* * * o * * *\n";
+		board += "* * * * * * *\n";
+		board += "    * * *    \n";
+		board += "    * * *    \n";
+
+		iface.showBoard(BoardType.ENGLISH, board);
 		
 	}
 		
