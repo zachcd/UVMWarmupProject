@@ -78,10 +78,10 @@ public class GamePlayer {
 			move = iface.getMove(maxChar, maxNum);
 			if(move.length() > 1)
 			{
-				sx = Character.getNumericValue(move.charAt(1));
-				sy = move.charAt(0) - 'a' + 1;
-				dx = Character.getNumericValue(move.charAt(3));
-				dy = move.charAt(0) - 'a' + 1;
+				sx = Character.getNumericValue(move.charAt(1))-1;
+				sy = move.charAt(0) - 'a';
+				dx = Character.getNumericValue(move.charAt(3))-1;
+				dy = move.charAt(2) - 'a';
 				
 				if(!board.move(sx, sy, dx, dy))
 				{

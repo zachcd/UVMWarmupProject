@@ -84,9 +84,12 @@ public class GameBoard{
 	}//end constructor
    public boolean move(int startx, int starty, int destx, int desty) {
    // check if valid;
-   	if(destx < 0 || desty < 0 || destx > 5 || desty > 5 ||startx < 0 || starty < 0 || startx > 5 || starty > 5 ) {
-   		return false;
-   	}
+    System.out.println("" + startx + " " + starty + " " +  destx + " " + desty);
+   	
+//   	if(destx < 0 || desty < 0 || destx > 5 || desty > 5 ||startx < 0 || starty < 0 || startx > 5 || starty > 5 ) {
+//			if(isValid (startx, starty, destx, desty))
+//	   		return false;
+//   	}
    	if(isValid(startx, starty, destx, desty)) {
      		 board[startx][starty] = Hole.EMPTY;
      		 board[destx][desty] = Hole.FILLED;
@@ -100,17 +103,15 @@ public class GameBoard{
 	   return type;
    }
    private boolean isValid(int startx, int starty, int destx,int desty) {
-       
        if(startx < 0 || starty < 0 || destx < 0 || desty < 0)
        	return false;
-       
-       
        
        if((this.type) == BoardType.ENGLISH) {
        	 if(startx > 6 || starty > 6 || destx > 6 || desty > 6)
        	   return false;
        		
           if(startx != destx && starty != desty){
+//          		System.out.println("Diagonal: " + startx + starty + destx + dest);
               return false;
              }
         }//first if  
@@ -118,11 +119,12 @@ public class GameBoard{
         	return false;
         	  
         if(board[startx][starty] == Hole.FILLED &&
-         board[destx][desty] == Hole.EMPTY &&
-         board[(startx + destx) / 2][(starty + desty) /2] == Hole.FILLED){
-      	  return true;
+         	 board[destx][desty] == Hole.EMPTY &&
+         	 board[(startx + destx) / 2][(starty + desty) /2] == Hole.FILLED){
+      	  	 return true;
         }   
          else{
+//         	System.out.println("Bad move?");
              return false;
         }   
    }//end isValid
@@ -140,11 +142,11 @@ public class GameBoard{
               (isValid(i,j,i,j-2)) ||
               (isValid(i,j,i+2,j-2)) ||
               (isValid(i,j,i-2,j+2))){
-                  return true;
+                  return false;
               }//end if
            }//end nested for
         }//end for
-          return false;
+          return true;
    	 }//end if 
        else {
    		 for(int i = 0; i < 5; i++) {
@@ -158,11 +160,11 @@ public class GameBoard{
    		           (isValid(i,j,i,j-2)) ||
    		           (isValid(i,j,i+2,j-2)) ||
    		           (isValid(i,j,i-2,j+2))){
-   		               return true;
+   		               return false;
    		           }//end if
    		        }//end nested for
    		    }//end for
-   		    return false;
+   		    return true;
          }//end else
       }//end isDone
    public int numPegs() {
