@@ -21,7 +21,8 @@ public class GamePlayer {
 			
 			char c = iface.getChar("PCSHQ");
 			switch(c){
-				case 'P': this.playGame();
+				case 'P': board = new GameBoard(board.boardType());
+									this.playGame();
 									break;
 
 				case 'H': iface.showHelp(board.boardType());

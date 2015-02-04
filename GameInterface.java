@@ -202,6 +202,8 @@ public class GameInterface
 			
 			if( entry.length() > 0 && entry.toLowerCase().charAt(0) == 'x' )
 				return "x";
+			if( entry.length() > 0 && entry.toLowerCase().charAt(0) == 'q' )
+				return "q";
 			else if(entry.length() < 2)
 			{
 				System.out.println("Invalid Entry");

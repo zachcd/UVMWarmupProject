@@ -84,7 +84,7 @@ public class GameBoard{
 	}//end constructor
    public boolean move(int startx, int starty, int destx, int desty) {
    // check if valid;
-    System.out.println("" + startx + " " + starty + " " +  destx + " " + desty);
+//    System.out.println("" + startx + " " + starty + " " +  destx + " " + desty);
    	
 //   	if(destx < 0 || desty < 0 || destx > 5 || desty > 5 ||startx < 0 || starty < 0 || startx > 5 || starty > 5 ) {
 //			if(isValid (startx, starty, destx, desty))
