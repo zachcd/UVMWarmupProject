@@ -48,30 +48,30 @@ public class GameBoard{
 
 		for (int i = 0; i < 5; i++) {
 		    for (int j = 0; j < 5; j++) {
-		        board[i][j] = FILLED;
+		        board[i][j] = Hole.FILLED;
 		    }
-		    for (int k = j; j < 5; k < 5; k++) {
-		        board[i][k] = NONE;
+		    for (int k = j; k < 5; k++) {
+		        board[i][k] = Hole.NONE;
 		    }
 		    }
 		       
-		board[2][1] = EMPTY;
+		board[2][1] = Hole.EMPTY;
 		} else {
 	         //ENGLISHBOARD  
-	           
-	          
+			Hole[] board;      
+			board = new Hole[7][7];  
 	         
 			 for (int i = 0; i < 7; i++) {
 				 for (int j = 0; j < 7; j++) {
 			 }
-			         board[i][j] = FILLED;
+			         board[i][j] = Hole.FILLED;
 			    }
 			    for (int i = 0; i < 2; i++) {
 			     for (int j = 0; j < 2; j++) {
-			         board[i][j] = NONE;
-			         board[i][6-j] = NONE;
-			         board[6-i][j] = NONE;
-			         board[6-i][6-j] = NONE;
+			         board[i][j] = Hole.NONE;
+			         board[i][6-j] = Hole.NONE;
+			         board[6-i][j] = Hole.NONE;
+			         board[6-i][6-j] = Hole.NONE;
 			     }
 			         
 			 
@@ -81,22 +81,7 @@ public class GameBoard{
 			            board[3][3] = EMPTY;
 		
 		}
-		
-		
-	}
-
-
-           
-           
-           
-           
-           
- 
-
-           
-       
-
-public bool move(int startx, int starty, int destx, int desty) {
+public boolean move(int startx, int starty, int destx, int desty) {
 // check if valid;
 	if(destx < 0 || desty < 0 || destx > 5 || desty > 5 ||startx < 0 || starty < 0 || startx > 5 || starty > 5 ) {
 		return false;
@@ -122,7 +107,7 @@ public bool move(int startx, int starty, int destx, int desty) {
   
            
            
-   private bool isValid(int startx, int starty, int destx,int desty) {
+   private boolean isValid(int startx, int starty, int destx,int desty) {
        if(this.type) == ENGLISH) {
     if(startx != destx && starty != desty){
         return false;
@@ -139,7 +124,7 @@ public bool move(int startx, int starty, int destx, int desty) {
    }
           
           
-public bool isDone() {
+public boolean isDone() {
     for(int i = 0; i < 7; i++) {
         for(int j = 0; j < 7; j++)
         {
