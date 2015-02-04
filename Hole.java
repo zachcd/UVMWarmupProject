@@ -63,26 +63,20 @@ board[2][1] = EMPTY;
            
        
 
-public bool move(sx, sy, dx, dy) {
+public bool move(int startx, int starty, int destx, int desty) {
 // check if valid;
-	if(dx < 0 || dy < 0 || dx < 5 || dy < 5) {
-    
-	if(isValid)
- 	  {
-  		 board[sx][sy] == EMPTY &&
-  		 board[dx][dy] == FILLED &&
-  		 board[(sx + dx) / 2][(sy + dy) /2] == EMPTY)
-   
-   return true;
-   }
-   
-   else
+	if(destx < 0 || desty < 0 || destx > 5 || desty > 5 ||startx < 0 || starty < 0 || startx > 5 || starty > 5 ) {
+		return false;
+	}
+	if(isValid(startx, starty, destx, desty)) {
+  		 board[startx][starty] = EMPTY;
+  		 board[destx][desty] = FILLED;
+  		 board[(startx + destx) / 2][(starty + desty) /2] == EMPTY)//removes peg from board  
+  		 return true;
+   }   else {
        return false;
    }
-   
-	else
-		return false;
-		}
+}
    
    
    
