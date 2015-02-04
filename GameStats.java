@@ -4,74 +4,40 @@ import java.util.*;
 public class GameStats {
 	 private int EnglishPegTotal;
 	 private int EnglishGameTotal;
-	 private int EnglishTimeTotal;
+	 private long EnglishTimeTotal;
 	 private int TrianglePegTotal;
 	 private int TriangleGameTotal;
-	 private int TriangleTimeTotal;
+	 private long TriangleTimeTotal;
 	 ArrayList<Integer> Triangle = new ArrayList<Integer>();
-	 ArrayList<Integer> TriangleTimes = new ArrayList<Integer>();
+	 ArrayList<Long> TriangleTimes = new ArrayList<Long>();
 	 ArrayList<Integer> English = new ArrayList<Integer>();
-	 ArrayList<Integer> EnglishTimes = new ArrayList<Integer>();
+	 ArrayList<Long> EnglishTimes = new ArrayList<Long>();
 
 	 public static void main(String[] args) {
 		 //This is a tester
            GameStats stats = new GameStats();
            stats.showStats();
-	        stats.addGameData(2, 50, BoardType.ENGLISH);
-	        stats.addGameData(4, 70, BoardType.ENGLISH);
-	        stats.addGameData(5, 90, BoardType.ENGLISH);
-	        System.out.println("----Peg Solitaire----");
-	        System.out.println("Average Pegs: " + stats.getEnglishAveragePegs());
-	        System.out.println(stats.getEnglishChart());
-	        System.out.println(stats.getEnglishGraph());
-	        stats.addGameData(7, 100, BoardType.TRIANGLE);
-	        stats.addGameData(6, 90, BoardType.TRIANGLE);
-	        stats.addGameData(5, 80, BoardType.TRIANGLE);
-	        stats.addGameData(4, 60, BoardType.TRIANGLE);
-	        stats.addGameData(3, 50, BoardType.TRIANGLE);
-	        stats.addGameData(2, 50, BoardType.TRIANGLE);
-	        System.out.println("\n----Triangle Peg Game----");
-	        System.out.println("Average Pegs: " + stats.getTriangleAveragePegs());
-	        System.out.println(stats.getTriangleChart());
-	        System.out.println(stats.getTriangleGraph());
-
-        stats.addGameData(2, 50, BoardType.ENGLISH);
-        stats.addGameData(4, 70, BoardType.ENGLISH);
-        stats.addGameData(5, 90, BoardType.ENGLISH);
-        System.out.println("----Peg Solitaire----");
-        System.out.println("Average Pegs: " + stats.getEnglishAveragePegs());
-        System.out.println(stats.getEnglishChart());
-        System.out.println(stats.getEnglishGraph());
-        stats.addGameData(7, 100, BoardType.TRIANGLE);
-        stats.addGameData(6, 90, BoardType.TRIANGLE);
-        stats.addGameData(5, 80, BoardType.TRIANGLE);
-        stats.addGameData(4, 60, BoardType.TRIANGLE);
-        stats.addGameData(3, 50, BoardType.TRIANGLE);
-        stats.addGameData(2, 50, BoardType.TRIANGLE);
-        System.out.println("\n----Triangle Peg Game----");
-        System.out.println("Average Pegs: " + stats.getTriangleAveragePegs());
-        System.out.println(stats.getTriangleChart());
-        System.out.println(stats.getTriangleGraph());
+	        
         	 }
 	 public GameStats() {
 		 	//basic constructor
 	 }
 
-	 public void addGameData(int pegsleft,int time, BoardType BType) {
+	 public void addGameData(int pegsleft,long time, BoardType BType) {
 		 if (BType == BoardType.ENGLISH) {
 			 //if the board type is english
 			 EnglishPegTotal = EnglishPegTotal + pegsleft;
 			 EnglishGameTotal = EnglishGameTotal + 1;
 			 EnglishTimeTotal = EnglishTimeTotal + time;
 			 English.add(Integer.valueOf(pegsleft));
-			 EnglishTimes.add(Integer.valueOf(time));
+			 EnglishTimes.add(Long.valueOf(time));
 		 } else {
 			 //if the board is a triangle
 			 TrianglePegTotal = TrianglePegTotal + pegsleft;
 			 TriangleGameTotal = TriangleGameTotal + 1;
 			 TriangleTimeTotal = TriangleTimeTotal + time;
 			 Triangle.add(Integer.valueOf(pegsleft));
-			 TriangleTimes.add(Integer.valueOf(time));
+			 TriangleTimes.add(Long.valueOf(time));
 		 }
 
 
