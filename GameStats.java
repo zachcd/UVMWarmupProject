@@ -43,15 +43,27 @@ public class GameStats {
 
 	 }
 	 public int getEnglishAveragePegs(){
+		 if (EnglishGameTotal == 0) {
+			 return 0;
+		 }
 		 return EnglishPegTotal / EnglishGameTotal;
 	 }
 	 public int getTriangleAveragePegs(){
+		 if (TriangleGameTotal == 0) {
+			 return 0;
+		 }
 		 return TrianglePegTotal / TriangleGameTotal;
 	 }
 	 public long getEnglishAverageTime() {
+		 if (EnglishGameTotal == 0) {
+			 return 0;
+		 }
 		 return EnglishTimeTotal / EnglishGameTotal;
 	 }
 	 public long getTriangleAverageTime() {
+		 if (TriangleGameTotal == 0) {
+			 return 0;
+		 }
 		 return TriangleTimeTotal/ TriangleGameTotal;
 	 }
 	 public String getTriangleChart() {
