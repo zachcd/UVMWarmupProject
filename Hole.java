@@ -76,9 +76,10 @@ public class GameBoard{
 			         
 			 
 			     }
-			             }
+			             
 			     
-			            board[3][3] = EMPTY;
+			            board[3][3] = Hole.EMPTY;
+		}
 		
 		}
 public boolean move(int startx, int starty, int destx, int desty) {
@@ -87,9 +88,9 @@ public boolean move(int startx, int starty, int destx, int desty) {
 		return false;
 	}
 	if(isValid(startx, starty, destx, desty)) {
-  		 board[startx][starty] = EMPTY;
-  		 board[destx][desty] = FILLED;
-  		 board[(startx + destx) / 2][(starty + desty) /2] == EMPTY)//removes peg from board  
+  		 board[startx][starty] = Hole.EMPTY;
+  		 board[destx][desty] = Hole.FILLED;
+  		 board[(startx + destx) / 2][(starty + desty) /2] == Hole.EMPTY)//removes peg from board  
   		 return true;
    }   else {
        return false;
@@ -108,14 +109,14 @@ public boolean move(int startx, int starty, int destx, int desty) {
            
            
    private boolean isValid(int startx, int starty, int destx,int desty) {
-       if(this.type) == ENGLISH) {
+       if(this.type) == BoardType.ENGLISH) {
     if(startx != destx && starty != desty){
         return false;
        }
     
-  if(board[startx][starty] == FILLED &&
-   board[destx][desty] == EMPTY &&
-   board[(startx + destx) / 2][(starty + desty) /2] == FILLED){
+  if(board[startx][starty] == Hole.FILLED &&
+   board[destx][desty] == Hole.EMPTY &&
+   board[(startx + destx) / 2][(starty + desty) /2] == Hole.FILLED){
 	  return true;
   }   
    else
@@ -125,6 +126,7 @@ public boolean move(int startx, int starty, int destx, int desty) {
           
           
 public boolean isDone() {
+	if (type == BoardType.ENGLISH){
     for(int i = 0; i < 7; i++) {
         for(int j = 0; j < 7; j++)
         {
@@ -135,12 +137,32 @@ public boolean isDone() {
            (isValid(i,j,i-2,j) ||
            (isValid(i,j,i,j-2) ||
            (isValid(i,j,i+2,j-2) ||
-           (isValid(i,j,i-2,j+2))
-   return true;
+           (isValid(i,j,i-2,j+2)){
+           return true;
+           }
         }
         }
     return false;
+	} else {
+		 for(int i = 0; i < 5; i++) {
+		        for(int j = 0; j < 5; j++)
+		        {
+		           if((isValid(i,j,i+2,j+2) || 
+		           (isValid(i,j,i+2,j) ||
+		           (isValid(i,j,i,j+2) ||
+		           (isValid(i,j,i-2,j-2) ||
+		           (isValid(i,j,i-2,j) ||
+		           (isValid(i,j,i,j-2) ||
+		           (isValid(i,j,i+2,j-2) ||
+		           (isValid(i,j,i-2,j+2)){
+		           return true;
+		           }
+		        }
+		        }
+		    return false;
+	}
   }
+}
         
            
            
