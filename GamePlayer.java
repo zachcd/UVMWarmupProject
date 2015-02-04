@@ -17,7 +17,7 @@ public class GamePlayer {
 		
 		while(!quit)
 		{
-			iface.showPlayMenu(BoardType.TRIANGLE);
+			iface.showPlayMenu(board.boardType());
 			
 			char c = iface.getChar("PCSHQ");
 			switch(c){
