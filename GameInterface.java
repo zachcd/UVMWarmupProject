@@ -172,12 +172,14 @@ public class GameInterface
 		else
 		{
 			System.out.print("Are you sure you wish to quit? (Y/N)");
-			switch(getChar("YN"))
-			{
-				case 'Y': return 'q'; break;
-				case 'N': return 'x'; break;
+			char ans = getChar("YN");
+			switch(ans) {
+			
+				case 'Y': return "q";
+				default: return "x"; 
+								 
 			}
-				
+		}		
 	}   
 	
 	/***
