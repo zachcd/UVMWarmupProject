@@ -29,7 +29,7 @@ public class GameStats {
         stats.addGameData(4, 60, BoardType.TRIANGLE);
         stats.addGameData(3, 50, BoardType.TRIANGLE);
         stats.addGameData(2, 50, BoardType.TRIANGLE);
-        System.out.println("----Triangle Peg Game----");
+        System.out.println("\n----Triangle Peg Game----");
         System.out.println("Average Pegs: " + stats.getTriangleAveragePegs());
         System.out.println(stats.getTriangleChart());
         System.out.println(stats.getTriangleGraph());
