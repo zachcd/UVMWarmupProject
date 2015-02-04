@@ -4,7 +4,7 @@ public class GameBoard {
 	private BoardType type;
 	
 	public GameBoard(BoardType typein) {
-		type = typein
+		type = typein;
 		if (type == BoardType.ENGLISH) {
 			int [][] board = new int [7][7];
 			//0 is no go, 1 is filled space, 2 is empty space
@@ -58,7 +58,7 @@ public class GameBoard {
 			board[6][5] = 0;
 			board[6][6] = 0;	
 		} else {
-			int [][] board = new int[5][5]
+			int [][] board = new int[5][5];
 			board[0][0] = 1;
 			board[0][1] = 0;
 			board[0][2] = 0;
@@ -87,10 +87,5 @@ public class GameBoard {
 		}
 		
 	}
-	public bool move(int startx, int starty, int destx, int desty) {
-		if (isValid(startx, starty, destx, desty))
-	}
-	private bool isValid(int startx, int starty, int destx, int desty) {
-		if
-	}
+	
 }
