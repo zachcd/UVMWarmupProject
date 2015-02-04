@@ -2,7 +2,7 @@
  CS205 Warmup Project
  Aaron Brunet, Jonathan Carter, Zachary Chay-Dolan,  Joseph Corbett
  
- GamePlayer - class to manage the peg solitaire gameplay
+ GamePlayer - class to implement the peg solitaire gameboard
  Main authors: Zachary Chay-Dolan, Joseph Corbett
  ***********************************/
 
