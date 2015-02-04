@@ -110,7 +110,14 @@ public class GameStats {
 		 ret+=getEnglishAverageTime() +"\n";
 		 ret+="Triangle Average Time:\n";
 		 ret+=getTriangleAverageTime() +"\n";
-		 ret+=
+		 ret+="English Chart:\n";
+		 ret+=getEnglishChart();
+		 ret+="Triangle Chart:\n";
+		 ret+=getTriangleChart();
+		 ret+="English Graph:\n";
+		 ret+=getEnglishGraph();
+		 ret+="Triangle Graph:\n";
+		 ret+=getTriangleGraph();
 	 }
 	 public String getEnglishChart() {
 		 String ret;
