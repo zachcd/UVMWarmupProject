@@ -50,7 +50,7 @@ public class GamePlayer {
 
 	private void playGame()
 	{
-		int startTime = System.currentTimeMillis()/1000;
+		long startTime = System.currentTimeMillis()/1000;
 		
 		char maxChar;
 		int maxNum;
@@ -69,8 +69,9 @@ public class GamePlayer {
 		
 		int sx, sy, dx, dy = 0;
 		
-		iface.showBoard();
-
+		iface.showBoard(board.boardType(), board.toString());
+		boolean quit = false;
+		
 		while(!quit && !board.isDone())
 		{
 
@@ -88,12 +89,12 @@ public class GamePlayer {
 				}
 				else
 				{
-					iface.showBoard();
+					iface.showBoard(board.boardType(), board.toString());
 				}	
 			}
 			else if(move == "q")
 			{
-				quit = TRUE;
+				quit = true;
 			}		
 		}
 		
