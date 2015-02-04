@@ -48,10 +48,10 @@ public class GameStats {
 	 public int getTriangleAveragePegs(){
 		 return TrianglePegTotal / TriangleGameTotal;
 	 }
-	 public int getEnglishAverageTime() {
+	 public long getEnglishAverageTime() {
 		 return EnglishTimeTotal / EnglishGameTotal;
 	 }
-	 public int getTriangleAverageTime() {
+	 public long getTriangleAverageTime() {
 		 return TriangleTimeTotal/ TriangleGameTotal;
 	 }
 	 public String getTriangleChart() {
