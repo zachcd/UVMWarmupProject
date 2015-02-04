@@ -19,7 +19,8 @@ public class GameStats {
         stats.addGameData(2, 50, BoardType.ENGLISH);
         stats.addGameData(4, 70, BoardType.ENGLISH);
         stats.addGameData(5, 90, BoardType.ENGLISH);
-        System.out.println(stats.getEnglishAveragePegs());
+        System.out.println("----Peg Solitaire----");
+        System.out.println("Average Pegs for Peg Solitaire:" + stats.getEnglishAveragePegs());
         System.out.println(stats.getEnglishChart());
         System.out.println(stats.getEnglishGraph());
         stats.addGameData(7, 100, BoardType.TRIANGLE);
