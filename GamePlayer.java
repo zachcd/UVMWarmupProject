@@ -40,8 +40,12 @@ public class GamePlayer {
 									}
 									break;
 
-				case 'Q': iface.showFarewell(stats.showStats());
-									quit = true;
+				case 'Q': System.out.print("Are you sure you want to quit? (Y/N)");
+									if(iface.getChar("YN") == 'Y')
+									{
+										iface.showFarewell(stats.showStats());
+										quit = true;
+									}
 									break;
 			}
 

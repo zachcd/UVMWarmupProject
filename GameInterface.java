@@ -110,7 +110,13 @@ public class GameInterface
 
 	public void showHelp(BoardType bt)
 	{
-		String message = "HELP:\n=====\n";
+		String message = "HELP for ";
+		
+		switch(bt) {
+			case ENGLISH: message += "English Solitaire\n==========================\n"; break;
+			case TRIANGLE: message += "Triangle Solitaire\n===========================\n"; break;
+		}
+
 		message += "The object of the game is to remove all but one peg. You remove a peg\n";
 		message += "by jumping over it with another peg. You can jump only one peg at a\n";
 		message += "time. Pegs can only move through jumping. ";
