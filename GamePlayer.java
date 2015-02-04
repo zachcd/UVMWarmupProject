@@ -31,7 +31,7 @@ public class GamePlayer {
 									break;
 
 				case 'C': iface.showBoardMenu();
-									bt = iface.getChar("ET");
+									char bt = iface.getChar("ET");
 									switch(bt) 
 									{
 										case 'E': board = new GameBoard(BoardType.ENGLISH); break;
@@ -93,7 +93,7 @@ public class GamePlayer {
 			}
 			else if(move == "q")
 			{
-				quit == TRUE;
+				quit = TRUE;
 			}		
 		}
 		
