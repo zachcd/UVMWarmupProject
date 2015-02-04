@@ -20,7 +20,7 @@ public class GameStats {
         stats.addGameData(4, 70, BoardType.ENGLISH);
         stats.addGameData(5, 90, BoardType.ENGLISH);
         System.out.println("----Peg Solitaire----");
-        System.out.println("Average Pegs for Peg Solitaire:" + stats.getEnglishAveragePegs());
+        System.out.println("Average Pegs: " + stats.getEnglishAveragePegs());
         System.out.println(stats.getEnglishChart());
         System.out.println(stats.getEnglishGraph());
         stats.addGameData(7, 100, BoardType.TRIANGLE);
@@ -29,7 +29,8 @@ public class GameStats {
         stats.addGameData(4, 60, BoardType.TRIANGLE);
         stats.addGameData(3, 50, BoardType.TRIANGLE);
         stats.addGameData(2, 50, BoardType.TRIANGLE);
-        System.out.println(stats.getTriangleAveragePegs());
+        System.out.println("----Triangle Peg Game----");
+        System.out.println("Average Pegs: " + stats.getTriangleAveragePegs());
         System.out.println(stats.getTriangleChart());
         System.out.println(stats.getTriangleGraph());
 	 }
