@@ -16,6 +16,7 @@ public class GameStats {
 	 public static void main(String[] args) {
 		 //This is a tester
            GameStats stats = new GameStats();
+           stats.showStats();
 	        stats.addGameData(2, 50, BoardType.ENGLISH);
 	        stats.addGameData(4, 70, BoardType.ENGLISH);
 	        stats.addGameData(5, 90, BoardType.ENGLISH);
@@ -34,7 +35,6 @@ public class GameStats {
 	        System.out.println(stats.getTriangleChart());
 	        System.out.println(stats.getTriangleGraph());
 
-        GameStats stats = new GameStats();
         stats.addGameData(2, 50, BoardType.ENGLISH);
         stats.addGameData(4, 70, BoardType.ENGLISH);
         stats.addGameData(5, 90, BoardType.ENGLISH);
@@ -100,7 +100,7 @@ public class GameStats {
 	 }
 	 public String showStats() {
 		 String ret;
-		 ret+="English Average Pegs:\n";
+		 ret="English Average Pegs:\n";
 		 ret+=getEnglishAveragePegs() +"\n";
 		 ret+="Triangle Average Pegs:\n";
 		 ret+=getTriangleAveragePegs() +"\n";
@@ -116,6 +116,7 @@ public class GameStats {
 		 ret+=getEnglishGraph();
 		 ret+="Triangle Graph:\n";
 		 ret+=getTriangleGraph();
+		 return ret;
 	 }
 	 public String getEnglishChart() {
 		 String ret;
