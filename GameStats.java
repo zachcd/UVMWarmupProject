@@ -15,22 +15,24 @@ public class GameStats {
 
 	 public static void main(String[] args) {
 		 //This is a tester
-        GameStats stats = new GameStats();
-        stats.addGameData(2, 50, BoardType.ENGLISH);
-        stats.addGameData(4, 70, BoardType.ENGLISH);
-        stats.addGameData(5, 90, BoardType.ENGLISH);
-        System.out.println(stats.getEnglishAveragePegs());
-        System.out.println(stats.getEnglishChart());
-        System.out.println(stats.getEnglishGraph());
-        stats.addGameData(7, 100, BoardType.TRIANGLE);
-        stats.addGameData(6, 90, BoardType.TRIANGLE);
-        stats.addGameData(5, 80, BoardType.TRIANGLE);
-        stats.addGameData(4, 60, BoardType.TRIANGLE);
-        stats.addGameData(3, 50, BoardType.TRIANGLE);
-        stats.addGameData(2, 50, BoardType.TRIANGLE);
-        System.out.println(stats.getTriangleAveragePegs());
-        System.out.println(stats.getTriangleChart());
-        System.out.println(stats.getTriangleGraph());
+	      GameStats stats = new GameStats();
+	        stats.addGameData(2, 50, BoardType.ENGLISH);
+	        stats.addGameData(4, 70, BoardType.ENGLISH);
+	        stats.addGameData(5, 90, BoardType.ENGLISH);
+	        System.out.println("----Peg Solitaire----");
+	        System.out.println("Average Pegs: " + stats.getEnglishAveragePegs());
+	        System.out.println(stats.getEnglishChart());
+	        System.out.println(stats.getEnglishGraph());
+	        stats.addGameData(7, 100, BoardType.TRIANGLE);
+	        stats.addGameData(6, 90, BoardType.TRIANGLE);
+	        stats.addGameData(5, 80, BoardType.TRIANGLE);
+	        stats.addGameData(4, 60, BoardType.TRIANGLE);
+	        stats.addGameData(3, 50, BoardType.TRIANGLE);
+	        stats.addGameData(2, 50, BoardType.TRIANGLE);
+	        System.out.println("\n----Triangle Peg Game----");
+	        System.out.println("Average Pegs: " + stats.getTriangleAveragePegs());
+	        System.out.println(stats.getTriangleChart());
+	        System.out.println(stats.getTriangleGraph());
 	 }
 	 public GameStats() {
 		 	//basic constructor
@@ -76,6 +78,18 @@ public class GameStats {
 		 }
 		 return ret;
 
+	 }
+	 public String showStats() {
+		 String ret;
+		 ret+="English Average Pegs:\n";
+		 ret+=getEnglishAveragePegs() +"\n";
+		 ret+="Triangle Average Pegs:\n";
+		 ret+=getTriangleAveragePegs() +"\n";
+		 ret+="English Average Time:\n";
+		 ret+=getEnglishAverageTime() +"\n";
+		 ret+="Triangle Average Time:\n";
+		 ret+=getTriangleAverageTime() +"\n";
+		 ret+=
 	 }
 	 public String getEnglishChart() {
 		 String ret;
