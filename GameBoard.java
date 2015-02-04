@@ -181,4 +181,41 @@ public class GameBoard{
 		   return false;
 	   }
    }
+
+public String toString() {
+
+String ret = "";
+if (type == BoardType.TRIANGLE) {
+	for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+        if (board[i][j] == Hole.FILLED) {
+		  ret+= "+";}
+		  if (board[i][j] == Hole.EMPTY) {
+		  ret+= "O";}
+		  else {
+		  ret+= "X";}
+    }
+   
+    }
+	 }
+	 
+	 
+	else {
+	
+	for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+        if (board[i][j] == Hole.FILLED) {
+		  ret+= "+";}
+		  if (board[i][j] == Hole.EMPTY ){
+		  ret+= "O";}
+		  else {
+		  ret+= "X";}
+
+    }
+
+	}
+	}
+return ret;
+}
+   
 }//end class
