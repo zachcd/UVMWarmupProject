@@ -1,3 +1,12 @@
+/**********************************
+ CS205 Warmup Project
+ Aaron Brunet, Jonathan Carter, Zachary Chay-Dolan,  Joseph Corbett
+ 
+ GameInterface - class to manage the user interaction for the
+ 								 peg solitaire game
+ 								 
+ Main author: Jonathan Carter
+ ***********************************/
 
 import java.util.Scanner;
 
@@ -32,6 +41,10 @@ public class GameInterface
 		
 	}
 	
+	
+	/***
+	 showFarewell - display an exit message
+	 ***/
 	public void showFarewell(String stats)
 	{
 		System.out.println("Here is how you did today:\n");
@@ -108,6 +121,10 @@ public class GameInterface
 		System.out.println(message);
 	}
 
+	/***
+	 showHelp - shows context (game type) sensitive help
+	 PRE: bt must be ENGLISH or TRIANGLE
+	 ***/
 	public void showHelp(BoardType bt)
 	{
 		String message = "HELP for ";
@@ -152,6 +169,12 @@ public class GameInterface
 
 	}
 	
+	/***
+	 showBoard - displays the board on screen - adding row and 
+	 						 column labels
+	 PRE: bt == ENGLISH ==> board came from an English board
+	 			bt == TRIANGLE ==> board came from an triangle board
+	 ***/
 	public void showBoard(BoardType bt, String board)
 	{
 		System.out.println("\n\n\n");
@@ -299,6 +322,10 @@ public class GameInterface
 	
 	}
 	
+	
+	/***
+	 main - test driver for the GameInterface class
+	 ***/
 	public static void main(String[] args) {	
 		
 		Scanner tempScanner = new Scanner(System.in);

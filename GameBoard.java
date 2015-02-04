@@ -1,32 +1,12 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**********************************
+ CS205 Warmup Project
+ Aaron Brunet, Jonathan Carter, Zachary Chay-Dolan,  Joseph Corbett
+ 
+ GamePlayer - class to manage the peg solitaire gameplay
+ Main authors: Zachary Chay-Dolan, Joseph Corbett
+ ***********************************/
 
-// 
-// public methods
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-//  boardType()
-//  
-//  
-//  isDone()
-//  
-//  move(src, dest) 
-//  
-//  numPegs()   * from 1 to last    & if peg is in array, count 1.  at end return numPegs.
-//  
-//  toString()  from 1 to last  & if hole is empty return (O) if peg is not in array return (B), if blue peg is in return (*),
-//  if red return (r)
-//  
-//  winner()  check if numPegs()
-//  
+
 
 public class GameBoard{
 	

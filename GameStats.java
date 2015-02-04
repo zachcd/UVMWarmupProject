@@ -1,9 +1,17 @@
+/**********************************
+ CS205 Warmup Project
+ Aaron Brunet, Jonathan Carter, Zachary Chay-Dolan,  Joseph Corbett
+ 
+ GameStats is the complete class handling the statistics for the game board
+ it takes in new game data with the add data method
+ and has various get methods for printing the statistics
+ it also has a simplistic showStats() method, which shows all stats. 
+
+ Author: Zachary Chay-Dolan
+ ***********************************/
+
 import java.util.*;
 
-//Game stats is the complete class handling the statistics for the game board
-// it takes in new game data with the add data method
-//and has various get methods for printing the statistics
-//it also has a simplistic showStats() method, which shows all stats. 
 public class GameStats {
 	 private int EnglishPegTotal;
 	 private int EnglishGameTotal;
