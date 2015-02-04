@@ -7,14 +7,28 @@ public class GameInterface
   
 	public GameInterface()
   {
-     	System.out.println("CS205 Warmup Project");
+     	System.out.println("\n\n\n\n\n               CS205 Warmup Project - Peg Solitaire");
+     	System.out.println("====================================================================");
+     	System.out.println("Aaron Brunet | Jonathan Carter | Zachary Chay-Dolan | Joseph Corbett\n\n");
+     	
 			scanner = new Scanner(System.in);
 			
   }
 
 	public void showWelcome()
 	{
-		System.out.println("Hello");
+		String message = "";
+		message += "Hello! Welcome to our Jumping Peg Game! In this game you will jump\n";
+		message += "pegs! How exciting. In order to jump a peg, we first recommend\n";
+		message += "choosing a game board type. For beginners we recommend the English\n";
+		message += "style board, as it is easier to read. When you're ready to play type P\n";
+		message += "and then press enter. In order to make a move, select the peg you\n";
+		message += "would like to jump and type it's location into the From: command\n";
+		message += "prompt. After that, enter the space you would like it to jump into.\n";
+		message += "The board should then print with it's new locations. Then you can\n";
+		message += "repeat the process and jump more pegs until there are no more moves.\n";		
+		
+		System.out.println(message);
 		
 	}
 	
@@ -31,7 +45,7 @@ public class GameInterface
 	 ***/
 	public void showPlayMenu(BoardType bt)
 	{
-		String message = "Menu:\n";
+		String message = "\n\nMenu:\n";
 		message +=        "=====\n";
 		
 		message += "(P)lay game\n";
@@ -62,6 +76,7 @@ public class GameInterface
 	 ***/
 	public void showBoardMenu()
 	{
+		System.out.println("\n\n\n");
 		showBoardMockups();
 		
 		String message = "Board Type:\n";
@@ -133,6 +148,7 @@ public class GameInterface
 	
 	public void showBoard(BoardType bt, String board)
 	{
+		System.out.println("\n\n\n");
 		if(bt == BoardType.ENGLISH)
 		{
 			System.out.println("\t   1 2 3 4 5 6 7\n");
@@ -141,6 +157,7 @@ public class GameInterface
 		String[] boardLines = board.split("\n");
 		for(int i = 0; i < boardLines.length; i++)
 			System.out.println("\t" + (char)('a' + i)+ "  " + boardLines[i]);
+		System.out.println("\n\n\n");
 		
 	}
 	
