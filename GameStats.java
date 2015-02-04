@@ -14,6 +14,7 @@ public class GameStats {
 	 ArrayList<Integer> EnglishTimes = new ArrayList<Integer>();
 
 	 public static void main(String[] args) {
+		 //This is a tester
         GameStats stats = new GameStats();
         stats.addGameData(2, 50, BoardType.ENGLISH);
         stats.addGameData(4, 70, BoardType.ENGLISH);
@@ -32,17 +33,19 @@ public class GameStats {
         System.out.println(stats.getTriangleGraph());
 	 }
 	 public GameStats() {
-
+		 	//basic constructor
 	 }
 
 	 public void addGameData(int pegsleft,int time, BoardType BType) {
 		 if (BType == BoardType.ENGLISH) {
+			 //if the board type is english
 			 EnglishPegTotal = EnglishPegTotal + pegsleft;
 			 EnglishGameTotal = EnglishGameTotal + 1;
 			 EnglishTimeTotal = EnglishTimeTotal + time;
 			 English.add(Integer.valueOf(pegsleft));
 			 EnglishTimes.add(Integer.valueOf(time));
 		 } else {
+			 //if the board is a triangle
 			 TrianglePegTotal = TrianglePegTotal + pegsleft;
 			 TriangleGameTotal = TriangleGameTotal + 1;
 			 TriangleTimeTotal = TriangleTimeTotal + time;
@@ -66,10 +69,10 @@ public class GameStats {
 	 }
 	 public String getTriangleChart() {
 		 String ret;
-		 ret = "_____________\n";
-		 ret+="Pegs| Time\n";
+		 ret = "_____________\n"; //top bar
+		 ret+="Pegs| Time\n"; //labels
 		 for (int i = 0; i < Triangle.size(); i++){
-			 ret+=Triangle.get(i) + "   |  " + TriangleTimes.get(i) + "\n";
+			 ret+=Triangle.get(i) + "   |  " + TriangleTimes.get(i) + "\n";//appends the pegs and the time with a spacer
 		 }
 		 return ret;
 
@@ -85,18 +88,18 @@ public class GameStats {
 	 }
 
 	 public String getEnglishGraph() {
-		 int LargestPeg = 0;
+		 int LargestPeg = 0;//this is to get the size needed for the graph
 		 for (int i = 0; i < English.size(); i++){
 			 if (English.get(i) > LargestPeg) {
 				 LargestPeg = English.get(i);
 			 }
 		 }
-		 String ret = "_______________________________________________________________\n";
+		 String ret = "_______________________________________________________________\n"; //top bar for the graph
 		 for (int i = LargestPeg; i >= 0; i--) {
 			 ret+=i + " |";
 			 for (int j = 0; j < English.size(); j++){
 				 if (English.get(j) == i) {
-					 ret+="*";
+					 ret+="*";//add a dot for that this space is occupied.
 				 } else {
 					 ret+=" ";
 				 }
