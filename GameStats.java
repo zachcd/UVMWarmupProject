@@ -130,7 +130,7 @@ public class GameStats {
 
 		 }
 		 ret+="_______________________________________________________________\n";
-		 ret+="   ";
+		 ret+="  ";
 		 for (int k = 1; k <= English.size(); k++){
 			 ret+=k;
 		 }
@@ -157,7 +157,7 @@ public class GameStats {
 
 		 }
 		 ret+="_______________________________________________________________\n ";
-		 ret+="   ";
+		 ret+="  ";
 		 for (int k = 1; k <= Triangle.size(); k++){
 			 ret+=k;
 		 }
