@@ -139,7 +139,7 @@ public class GameInterface
 		
 		String[] boardLines = board.split("\n");
 		for(int i = 0; i < boardLines.length; i++)
-			System.out.println("\t" + (char)('a' + i)+ "   " + boardLines[i]);
+			System.out.println("\t" + (char)('a' + i)+ "  " + boardLines[i]);
 		
 	}
 	

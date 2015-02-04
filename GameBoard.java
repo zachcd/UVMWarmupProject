@@ -61,7 +61,7 @@ public class GameBoard{
 		} 
       else {
 	   //ENGLISHBOARD  
-			Hole[][] board;      
+			     
 			board = new Hole[7][7];  
 	         
 			 for (int i = 0; i < 7; i++) {
@@ -100,11 +100,23 @@ public class GameBoard{
 	   return type;
    }
    private boolean isValid(int startx, int starty, int destx,int desty) {
+       
+       if(startx < 0 || starty < 0 || destx < 0 || desty < 0)
+       	return false;
+       
+       
+       
        if((this.type) == BoardType.ENGLISH) {
+       	 if(startx > 6 || starty > 6 || destx > 6 || desty > 6)
+       	   return false;
+       		
           if(startx != destx && starty != desty){
               return false;
              }
-        }//first if       
+        }//first if  
+        else if(startx > 4 || starty > 4 || destx > 4 || desty > 4)
+        	return false;
+        	  
         if(board[startx][starty] == Hole.FILLED &&
          board[destx][desty] == Hole.EMPTY &&
          board[(startx + destx) / 2][(starty + desty) /2] == Hole.FILLED){
@@ -202,18 +214,18 @@ if (type == BoardType.TRIANGLE) {
 	 
 	else {
 	
-	for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-        if (board[i][j] == Hole.FILLED) {
-		  ret+= "+";}
-		  if (board[i][j] == Hole.EMPTY ){
-		  ret+= "O";}
-		  else {
-		  ret+= "X";}
-
-    }
-
-	}
+		for (int i = 0; i < 7; i++) {
+	    for (int j = 0; j < 7; j++) {
+	        if (board[j][i] == Hole.FILLED) 
+			  		ret+= "* ";
+			  	else if (board[j][i] == Hole.EMPTY )
+			  		ret+= "o ";
+			 		else 
+			 			ret+= "  ";
+	
+	    }
+			ret += "\n";
+		}
 	}
 return ret;
 }

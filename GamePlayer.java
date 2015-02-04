@@ -11,7 +11,7 @@ public class GamePlayer {
 		
 		iface = new GameInterface();
 		stats = new GameStats();
-		board = new GameBoard(BoardType.TRIANGLE);
+		board = new GameBoard(BoardType.ENGLISH);
 		
 		iface.showWelcome();
 		
