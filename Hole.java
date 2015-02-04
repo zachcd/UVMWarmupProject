@@ -1,0 +1,160 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+// 
+// public methods
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+//  boardType()
+//  
+//  
+//  isDone()
+//  
+//  move(src, dest) 
+//  
+//  numPegs()   * from 1 to last    & if peg is in array, count 1.  at end return numPegs.
+//  
+//  toString()  from 1 to last  & if hole is empty return (O) if peg is not in array return (B), if blue peg is in return (*),
+//  if red return (r)
+//  
+//  winner()  check if numPegs()
+//  
+ 
+ public enum Hole {
+     FILLED, EMPTY, NONE
+ }
+ 
+
+Hole[] board;
+
+board = new Hole[5][5];
+    
+ board [0][0] = FILLED;
+ board [0][1] = EMPTY;
+ board [1][1] = NONE;
+ 
+
+for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+        board[i][j] = FILLED;
+    }
+    for (int k = j; j < 5; k < 5; k++) {
+        board[i][k] = NONE;
+    }
+    }
+       
+board[2][1] = EMPTY;
+
+           
+           
+           
+           
+           
+ 
+
+           
+       
+
+public bool move(sx, sy, dx, dy) {
+// check if valid;
+	if(dx < 0 || dy < 0 || dx < 5 || dy < 5) {
+    
+	if(isValid)
+ 	  {
+  		 board[sx][sy] == EMPTY &&
+  		 board[dx][dy] == FILLED &&
+  		 board[(sx + dx) / 2][(sy + dy) /2] == EMPTY)
+   
+   return true;
+   }
+   
+   else
+       return false;
+   }
+   
+	else
+		return false;
+		}
+   
+   
+   
+   
+        ENGLISHBOARD
+   
+           
+       
+           
+           
+          
+ //           
+// for (int i = 0; i < 7; i++) {
+//     for (int j = 0; j < 7; j++) {
+//         board[i][j] = FILLED;
+//     }
+//     for (int i = 0; i < 2; i++) {
+//     for (int j = 0; j < 2; j++) {
+//         board[i][j] = NONE;
+//         board[i][6-j] = NONE;
+//         board[6-i][j] = NONE;
+//         board[6-i][6-j] = NONE;
+//     }
+//         
+// 
+//     }
+//         
+//     }
+//     
+//            board[3][3] = EMPTY;
+//            
+           
+  
+           
+           
+   private bool isValid(sx, sy, dx, dy) {
+       if(this.type) == ENGLISH) {
+    if(sx != dx && sy != dy)
+        return false;
+       }
+    
+  if(board[sx][sy] == FILLED &&
+   board[dx][dy] == EMPTY &&
+   board[(sx + dx) / 2][(sy + dy) /2] == FILLED)
+   
+   return true;
+   
+   else
+       return false;
+   }
+          
+          
+public bool isDone() {
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 5; j++)
+        {
+           if((isValid(i,j,i+2,j+2) || 
+           (isValid(i,j,i+2,j) ||
+           (isValid(i,j,i,j+2) ||
+           (isValid(i,j,i-2,j-2) ||
+           (isValid(i,j,i-2,j) ||
+           (isValid(i,j,i,j-2) ||
+           (isValid(i,j,i+2,j-2) ||
+           (isValid(i,j,i-2,j+2))
+   return true;
+        }
+        }
+    return false;
+  }
+        
+           
+           
+               
+            
+}

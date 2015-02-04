@@ -46,11 +46,11 @@ GameBoard (Joseph):
 	- public methods:
 		boardType(): reports which instance of a board this is
 		isDone(): checks to see if there are any legal moves
-		move(src, dest): tries to move a peg from src to dest position
+		move(sx, sy, dx, dy): tries to move a peg from src to dest position
 		numPegs(): reports the number of pegs remaining on the board
 		toString(): returns an ASCII representation of the game board
 		winner(): checks to see if the board is in a winning state 
-							(return numPegs() == 1)
+				(return numPegs() == 1)
 
 GameStats(Zach):
 	- Keeps track of statistics for the game session
