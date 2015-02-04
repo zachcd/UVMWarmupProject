@@ -15,8 +15,7 @@ public class GameStats {
 
 	 public static void main(String[] args) {
 		 //This is a tester
-<<<<<<< HEAD
-	      GameStats stats = new GameStats();
+           GameStats stats = new GameStats();
 	        stats.addGameData(2, 50, BoardType.ENGLISH);
 	        stats.addGameData(4, 70, BoardType.ENGLISH);
 	        stats.addGameData(5, 90, BoardType.ENGLISH);
@@ -34,7 +33,7 @@ public class GameStats {
 	        System.out.println("Average Pegs: " + stats.getTriangleAveragePegs());
 	        System.out.println(stats.getTriangleChart());
 	        System.out.println(stats.getTriangleGraph());
-=======
+
         GameStats stats = new GameStats();
         stats.addGameData(2, 50, BoardType.ENGLISH);
         stats.addGameData(4, 70, BoardType.ENGLISH);
@@ -53,8 +52,7 @@ public class GameStats {
         System.out.println("Average Pegs: " + stats.getTriangleAveragePegs());
         System.out.println(stats.getTriangleChart());
         System.out.println(stats.getTriangleGraph());
->>>>>>> 737e74727f237dee260171f72e120e77a03b52b4
-	 }
+        	 }
 	 public GameStats() {
 		 	//basic constructor
 	 }
